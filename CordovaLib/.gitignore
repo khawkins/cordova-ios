@@ -4,3 +4,22 @@ build/*
 *.mode1v3
 javascripts/cordova-*.js
 
+## OS X noise
+.DS_Store
+DerivedData/
+
+## Xcode noise
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+artifacts/
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
