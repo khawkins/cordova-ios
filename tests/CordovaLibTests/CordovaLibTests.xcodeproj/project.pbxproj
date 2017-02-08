@@ -32,8 +32,6 @@
 		C0FA7CA31E4BB6420077B045 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 303A4070152124BB00182201 /* InfoPlist.strings */; };
 		C0FA7CA41E4BB6420077B045 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 30F8AE1C152129DA006625B3 /* www */; };
 		C0FA7CA51E4BB6420077B045 /* config-custom.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C4C91771C2ACF130055AFC3 /* config-custom.xml */; };
-		C0FA7CAE1E4BB8DF0077B045 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FA7CAC1E4BB6B30077B045 /* Cordova.framework */; };
-		C0FA7CAF1E4BB8DF0077B045 /* Cordova.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0FA7CAC1E4BB6B30077B045 /* Cordova.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C0FA7CB51E4BBBBE0077B045 /* CDVWhitelistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30356213141049E1006C2D43 /* CDVWhitelistTests.m */; };
 		C0FA7CB61E4BBBBE0077B045 /* CDVPluginResultJSONSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 686357B9141002F200DF4CF2 /* CDVPluginResultJSONSerializationTests.m */; };
 		C0FA7CB71E4BBBBE0077B045 /* CDVLocalStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3062D1AD151D4D9D000D9128 /* CDVLocalStorageTests.m */; };
@@ -48,6 +46,8 @@
 		C0FA7CC01E4BBBBE0077B045 /* CDVStartPageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA7F20417962CCD001A0CE6 /* CDVStartPageTests.m */; };
 		C0FA7CC31E4BBBBE0077B045 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 686357B3141002F200DF4CF2 /* InfoPlist.strings */; };
 		C0FA7CCE1E4BBE400077B045 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FA7CAC1E4BB6B30077B045 /* Cordova.framework */; };
+		C0FA7CDB1E4BC4FE0077B045 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FA7CAC1E4BB6B30077B045 /* Cordova.framework */; };
+		C0FA7CDD1E4BC5020077B045 /* Cordova.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0FA7CAC1E4BB6B30077B045 /* Cordova.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB89634A15FE66EA00E12277 /* CDVInvokedUrlCommandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB89634915FE66EA00E12277 /* CDVInvokedUrlCommandTests.m */; };
 		EB96677216ADBCF500D86CDF /* CDVUserAgentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EB96677116ADBCF500D86CDF /* CDVUserAgentTest.m */; };
 		EBA3554615A731F100F4DE24 /* CDVFakeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3554515A731F100F4DE24 /* CDVFakeFileManager.m */; };
@@ -73,13 +73,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C0FA7CB01E4BB8DF0077B045 /* Embed Frameworks */ = {
+		C0FA7CDE1E4BC5020077B045 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C0FA7CAF1E4BB8DF0077B045 /* Cordova.framework in Embed Frameworks */,
+				C0FA7CDD1E4BC5020077B045 /* Cordova.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,7 +111,7 @@
 		7E91405F17711D88002C6A3F /* CDVWebViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVWebViewDelegateTests.m; sourceTree = "<group>"; };
 		7EF33BD61911ABA20048544E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C0FA7CAA1E4BB6420077B045 /* CordovaFrameworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CordovaFrameworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0FA7CAC1E4BB6B30077B045 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/cordova-ios-dgcbizzhftqmetgvdmvcrqodkvka/Build/Products/Debug-iphonesimulator/Cordova.framework"; sourceTree = "<group>"; };
+		C0FA7CAC1E4BB6B30077B045 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = "../Debug-iphonesimulator/Cordova.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0FA7CC71E4BBBBE0077B045 /* CordovaFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CordovaFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB89634915FE66EA00E12277 /* CDVInvokedUrlCommandTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVInvokedUrlCommandTests.m; sourceTree = "<group>"; };
 		EB96677116ADBCF500D86CDF /* CDVUserAgentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVUserAgentTest.m; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0FA7CAE1E4BB8DF0077B045 /* Cordova.framework in Frameworks */,
+				C0FA7CDB1E4BC4FE0077B045 /* Cordova.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +294,7 @@
 				C0FA7C9E1E4BB6420077B045 /* Frameworks */,
 				C0FA7CA01E4BB6420077B045 /* Resources */,
 				C0FA7CA61E4BB6420077B045 /* Copy cordova.js into www directory */,
-				C0FA7CB01E4BB8DF0077B045 /* Embed Frameworks */,
+				C0FA7CDE1E4BC5020077B045 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
