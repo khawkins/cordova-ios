@@ -162,7 +162,7 @@ return require('./list-devices').run()
         events.emit('log','\tConfiguration: ' + configuration);
         events.emit('log','\tPlatform: ' + (buildOpts.device ? 'device' : 'emulator'));
 
-        var buildOutputDir = path.join(projectPath, 'build', 'device');
+        var buildOutputDir = path.join(projectPath, 'build', (buildOpts.device ? 'device' : 'emulator'));
 
         // remove the build/device folder before building
         return spawn('rm', [ '-rf', buildOutputDir ], projectPath)
@@ -207,35 +207,9 @@ return require('./list-devices').run()
           return spawn('xcodebuild', xcodearchiveArgs, projectPath);
         }
 
-        function unpackIPA() {
-            var ipafile = path.join(buildOutputDir, projectName + '.ipa');
-
-            // unpack the existing platform/ios/build/device/appname.ipa (zipfile), will create a Payload folder 
-            return spawn('unzip', [ '-o', '-qq', ipafile ], buildOutputDir);
-        }
-
-        function moveApp() {
-            var appFileInflated = path.join(buildOutputDir, 'Payload', projectName + '.app');
-            var appFile = path.join(buildOutputDir, projectName + '.app');
-            var payloadFolder = path.join(buildOutputDir, 'Payload');
-
-            // delete the existing platform/ios/build/device/appname.app 
-            return spawn('rm', [ '-rf', appFile ], buildOutputDir)
-                .then(function() {
-                    // move the platform/ios/build/device/Payload/appname.app to parent 
-                    return spawn('mv', [ '-f', appFileInflated, buildOutputDir ], buildOutputDir);
-                })
-                .then(function() {
-                    // delete the platform/ios/build/device/Payload folder
-                    return spawn('rm', [ '-rf', payloadFolder ], buildOutputDir);
-                });
-        }
-
         return Q.nfcall(fs.writeFile, exportOptionsPath, exportOptionsPlist, 'utf-8')
                 .then(checkSystemRuby)
-                .then(packageArchive)
-                .then(unpackIPA)
-                .then(moveApp);
+                .then(packageArchive);
     });
 };
 
@@ -385,6 +359,7 @@ module.exports.help = function help() {
     console.log('Usage: build [--debug | --release] [--archs=\"<list of architectures...>\"]');
     console.log('             [--device | --simulator] [--codeSignIdentity=\"<identity>\"]');
     console.log('             [--codeSignResourceRules=\"<resourcerules path>\"]');
+    console.log('             [--developmentTeam=\"<Team ID>\"]');
     console.log('             [--provisioningProfile=\"<provisioning profile>\"]');
     console.log('    --help                  : Displays this dialog.');
     console.log('    --debug                 : Builds project in debug mode. (Default)');
@@ -396,6 +371,8 @@ module.exports.help = function help() {
     console.log('                            : Specifies, what type of project to build');
     console.log('    --codeSignIdentity      : Type of signing identity used for code signing.');
     console.log('    --codeSignResourceRules : Path to ResourceRules.plist.');
+    console.log('    --developmentTeam       : New for Xcode 8. The development team (Team ID)');
+    console.log('                              to use for code signing.');
     console.log('    --provisioningProfile   : UUID of the profile.');
     console.log('    --device --noSign       : Builds project without application signing.');
     console.log('');
