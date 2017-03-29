@@ -119,12 +119,12 @@ function copyTemplateFiles(project_path, project_name, project_template_dir, pac
     var r = path.join(project_path, project_name);
 
     shell.rm('-rf', path.join(r+'.xcodeproj'));
-    shell.cp('-rf', path.join(project_template_dir, '__TEMP__.xcodeproj'), project_path);
-    shell.mv('-f', path.join(project_path, '__TEMP__.xcodeproj'), path.join(r+'.xcodeproj'));
+    shell.cp('-rf', path.join(project_template_dir, '__TEMP__.template_xcodeproj'), project_path);
+    shell.mv('-f', path.join(project_path, '__TEMP__.template_xcodeproj'), path.join(r+'.xcodeproj'));
 
     shell.rm('-rf', path.join(project_path, project_name+'.xcworkspace'));
-    shell.cp('-rf', path.join(project_template_dir, '__TEMP__.xcworkspace'), project_path);
-    shell.mv('-f', path.join(project_path, '__TEMP__.xcworkspace'), path.join(r+'.xcworkspace'));
+    shell.cp('-rf', path.join(project_template_dir, '__TEMP__.template_xcworkspace'), project_path);
+    shell.mv('-f', path.join(project_path, '__TEMP__.template_xcworkspace'), path.join(r+'.xcworkspace'));
     shell.mv('-f', path.join(r+'.xcworkspace', 'xcshareddata', 'xcschemes', '__PROJECT_NAME__.xcscheme'), path.join(r+'.xcworkspace', 'xcshareddata', 'xcschemes', project_name+'.xcscheme'));
 
     shell.rm('-rf', r);
